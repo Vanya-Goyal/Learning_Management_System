@@ -1,0 +1,92 @@
+/* Udemy Theme-based Cart Styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #ffffff;
+    color: #1c1d1f;
+    margin: 0;
+    padding: 0;
+}
+
+.cart-container {
+    width: 80%;
+    margin: 50px auto;
+    padding: 20px;
+    background: #ffffff;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+h2 {
+    text-align: center;
+    color: #5624d0;
+}
+
+.cart-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.cart-table th, .cart-table td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+.cart-table th {
+    background-color: #f7f9fa;
+    font-weight: bold;
+}
+
+.remove-btn {
+    background: #ff4d4d;
+    color: #ffffff;
+    padding: 8px 12px;
+    text-decoration: none;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+}
+
+.remove-btn:hover {
+    background: #e63939;
+}
+
+.cart-summary {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.cart-summary h3 {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.clear-btn, .checkout-btn {
+    display: inline-block;
+    margin: 10px;
+    padding: 12px 20px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+.clear-btn {
+    background: #ff4d4d;
+    color: white;
+}
+
+.clear-btn:hover {
+    background: #e63939;
+}
+
+.checkout-btn {
+    background: #5624d0;
+    color: white;
+}
+
+.checkout-btn:hover {
+    background: #3e1a9a;
+}

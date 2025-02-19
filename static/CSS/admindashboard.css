@@ -1,0 +1,27 @@
+        /* Ensure all cards have the same height */
+        
+        .card {
+            height: 100%;
+        }
+
+        .card-body {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            height: 100%;
+        }
+
+        .card-img-top {
+            height: 200px; /* Fixed height for images */
+            width: 100%;   /* Ensure images cover the full width of the card */
+            object-fit: cover; /* Makes sure images cover the space without distortion */
+        }
+
+        .card-title {
+            font-size: 1.2rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .card-text {
+            flex-grow: 1;
+        }

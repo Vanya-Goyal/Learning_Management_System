@@ -1,0 +1,255 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #EEEEEE;
+    margin: 0;
+    padding: 0;
+}
+
+/* Ensure full width for navbar and footer */
+.navbar,
+footer {
+    width: 100%;
+}
+.navbar{
+    background-color: #3B1E54;
+}
+/* User dropdown button */
+/* User initial circle */
+/* Adjust the dropdown parent item */
+.nav-item.dropdown {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    /* Match navbar height */
+}
+
+/* User dropdown button */
+.user-dropdown {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    padding: 0 !important;
+    /* Remove default padding */
+}
+
+/* Remove default Bootstrap nav-link padding */
+.navbar-nav .nav-link {
+    padding: 0;
+}
+
+/* User initial circle */
+
+.user-initial {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #D4BEE4;
+    color: white;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+
+
+    /* border-radius: 0%;
+    font-size: 18px;
+    font-weight: bold;
+    color: white;
+    cursor: pointer;
+    background-color: #007bff; 
+    text-transform: uppercase; 
+    line-height: 40px; 
+    text-align: center;  */
+}
+
+/* Dropdown menu styling */
+.dropdown-menu {
+    min-width: 200px;
+
+}
+
+.dropdown-menu a {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+}
+
+
+
+.user-dropdown {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #9B7EBD;
+    color: white;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+/* Hover effect */
+.user-dropdown:hover {
+    background-color: #9B7EBD;
+    color: white;
+}
+
+/* Dropdown menu styling */
+.dropdown-menu {
+    min-width: 200px;
+}
+
+.dropdown-menu a {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+
+/* Ensure page takes full height */
+.page-wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Push content down to center */
+.content-wrapper {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #EEEEEE;
+}
+
+/* Make the form look centered properly
+.forgot-password-container {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    width: 400px;
+    text-align: center;
+} */
+
+/* Ensure footer is at bottom */
+footer {
+    width: 100%;
+}
+
+
+
+
+footer {
+    background-color: #101315;
+    color: #fff;
+    padding: 20px;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 0;
+    border-bottom: 1px solid #444;
+}
+
+.footer-top .highlight {
+    color: #9B7EBD;
+}
+
+.footer-logos img {
+    width: 80px;
+    margin: 0 5px;
+}
+
+.footer-links {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 20px;
+    padding: 20px 0;
+}
+
+.footer-column h3 {
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.footer-column a {
+    display: block;
+    color: #ccc;
+    font-size: 14px;
+    text-decoration: none;
+    margin-bottom: 5px;
+}
+
+.footer-column a:hover {
+    color: #fff;
+}
+
+.footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 15px;
+    border-top: 1px solid #444;
+    font-size: 14px;
+}
+
+.footer-bottom a {
+    color: #ccc;
+    text-decoration: none;
+    margin-left: 15px;
+}
+
+.footer-bottom a:hover {
+    color: #fff;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .footer-top {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .footer-logos img {
+        width: 60px;
+    }
+
+    .footer-links {
+        grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+        text-align: center;
+    }
+
+    .footer-bottom {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .footer-links {
+        grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+        text-align: center;
+    }
+
+    .footer-bottom {
+        flex-direction: column;
+        text-align: center;
+    }
+}

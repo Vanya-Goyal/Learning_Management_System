@@ -1,0 +1,503 @@
+/* Import Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+html, body {
+    height: 100%;
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    
+        background-color: #EEEEEE;  /* Deep Black */
+        color: black;  /* Neon Green Text */
+    
+    
+    display: flex;
+    flex-direction: column;
+}
+
+.main-content{
+    flex:1;
+}
+a {
+    color: #D4BEE4;  /* Electric Blue for links */
+    text-decoration: none;
+    transition: color 0.3s ease-in-out;
+}
+a:hover {
+    color: #EEEEEE;  /* Neon Green on hover */
+    text-decoration: underline;
+}
+
+
+/* Hero Section */
+.hero-section {
+    min-height: 50vh;
+    background: linear-gradient(135deg, #3B1E54, #EEEEEE);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 2rem;
+    flex-grow: 1;
+    
+}
+
+.hero-title {
+    font-size: 3rem;
+    font-weight: 600;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeIn 1.5s ease-in-out forwards;
+}
+
+.hero-subtitle {
+    font-size: 1.5rem;
+    margin-top: 10px;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeIn 2s ease-in-out forwards;
+}
+
+.btn-primary {
+    background-color: #EEEEEE;  /* Neon Green */
+    border: none;
+    color: #0d0d0d;  /* Deep Black Text */
+    transition: background 0.3s ease-in-out;
+}
+.btn-primary:hover {
+    background-color: #D4BEE4;  /* Electric Blue */
+    color: #0d0d0d;
+}
+
+/* Secondary Button (Outline) */
+.btn-outline-light {
+    border: 2px solid #3B1E54;
+    color: #3B1E54;
+    transition: all 0.3s ease-in-out;
+}
+.btn-outline-light:hover {
+    background-color: #b4a7d6;
+    color: #0d0d0d;
+}
+
+
+.hero-buttons {
+    margin-top: 20px;
+    display: flex;
+    gap: 15px;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeIn 2.5s ease-in-out forwards;
+}
+
+.hero-btn {
+    padding: 12px 24px;
+    font-size: 1rem;
+    font-weight: 500;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+.explore-btn {
+    background-color: #D4BEE4;  
+    color: #0d0d0d; 
+}
+
+.explore-btn:hover {
+    background-color: #3B1E54;  
+    color: #0d0d0d;
+    transform: scale(1.05);
+}
+
+.join-btn {
+    
+    background-color: #b4a7d6; 
+    color: #0d0d0d;
+}
+
+.join-btn:hover {
+    background-color: #D4BEE4;  
+    color: #0d0d0d;
+    transform: scale(1.05);
+}
+
+/* Featured Course Categories */
+
+.course-categories {
+    text-align: center;
+    padding: 50px 0;
+}
+
+.course-categories h2 {
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.category-card {
+    display: block;
+    text-decoration: none;
+    
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+    background-color: rgb(255, 255, 255);  /* Dark Gray for contrast */
+    color: black;
+    border: 1px solid #3B1E54;
+}
+
+.category-card img {
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+}
+
+.category-card h5 {
+    margin-top: 15px;
+    font-weight: 600;
+}
+
+.category-card:hover {
+    transform: translateY(-5px);
+    color: black;
+    
+}
+
+
+.featured-courses {
+    text-align: center;
+    padding: 50px 0;
+    font-size: 2rem;
+    font-weight: bold;
+    color: black;  
+    border: 3px solid #EEEEEE;
+    border-radius: 10px;
+    background: linear-gradient(135deg, #EEEEEE, #EEEEEE);
+}
+
+.featured-courses p {
+    font-size: 1.3rem !important; 
+    color: black !important;  
+    font-weight: 700 !important;  
+    text-align: center !important;
+    margin-top: 15px !important;
+}
+
+
+.carousel-inner {
+    display: flex;
+    flex-wrap: nowrap;
+}
+.carousel-item {
+    display: flex;
+    justify-content: center;
+}
+
+
+.course-card {
+    background-color: #EEEEEE;  /* Dark Gray for contrast */
+    color: black;
+    border: 1px solid black;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+    text-align: center;
+    margin: 10px;
+}
+
+.course-card img {
+    width: 100%;  /* Ensures images take full width */
+    height: 180px; /* Keeps height consistent */
+    object-fit: contain; /* Ensures the entire image fits without cropping */
+    border-radius: 10px;
+    background-color: #EEEEEE; /* Adds a subtle background in case images have different aspect ratios */
+    padding: 5px; /* Adds space to prevent stretching */
+}
+
+
+
+.course-card h5 {
+    margin-top: 15px;
+    font-weight: 600;
+}
+
+.course-card p {
+    margin: 5px 0;
+    color: #666;
+}
+
+.course-card .price {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: black; 
+}
+
+.course-card:hover {
+    transform: translateY(-5px);
+    background-color: #D8C4B6;
+    color: #0d0d0d;
+}
+.carousel-control-prev, .carousel-control-next {
+    width: 5%;
+}
+
+.carousel-control-prev-icon, .carousel-control-next-icon {
+    background-color: black;
+    border-radius: 50%;
+    padding: 10px;
+}
+
+
+
+/* Why Choose Knowlify Section */
+.why-choose {
+    padding: 50px 0;
+    background: linear-gradient(135deg, #3B1E54, #EEEEEE); /* Dark Gray Gradient */
+    text-align: center;
+    border-radius: 10px;
+}
+
+.why-choose h2 {
+    font-size: 2rem;
+    font-weight: bold;
+    color: black; /* Neon Green */
+}
+
+/* Increase Icon Size */
+.feature-icon {
+    width: 100px;  /* Increased Size */
+    height: 100px;
+    border-radius: 50%;
+    margin-bottom: 15px;
+    border: 3px solid black;
+    transition: transform 0.3s ease-in-out;
+}
+
+/* Hover Effect for Icons */
+.feature-icon:hover {
+    transform: scale(1.1);
+}
+
+.why-choose h5 {
+    color: black; /* Electric Blue */
+    font-weight: bold;
+    font-size: 1.3rem;
+}
+
+.why-choose p {
+    color: #EEEEEE;
+    font-size: 1rem;
+    max-width: 300px;
+    margin: auto;
+}
+
+.main-content {
+    flex: 1;
+}
+
+/* Testimonials Section */
+.testimonials {
+    padding: 50px 0;
+    background: linear-gradient(135deg, #3B1E54, #D4BEE4); /* Dark Gray Gradient */
+    text-align: center;
+    border-radius: 10px;
+}
+
+.testimonials h2 {
+    font-size: 2rem;
+    font-weight: bold;
+    color: black;  /* Neon Green */
+}
+
+.testimonial-img {
+    width: 90px;
+    height: 90px;
+    border: 3px solid black;
+    margin-bottom: 10px;
+}
+
+.testimonials h5 {
+    color: black; /* Electric Blue */
+    font-weight: bold;
+}
+.testimonials span {
+    display: block; /* Ensures it appears on a new line */
+    font-size: 1rem;
+    color: black;  /* Electric Blue */
+    font-weight: 600;
+    margin-top: 5px;
+}
+
+
+.testimonials p {
+    color: #EEEEEE;
+    font-size: 1rem;
+    font-style: italic;
+    max-width: 300px;
+    margin: auto;
+}
+
+/* Meet Our Instructors Section */
+.instructors {
+    padding: 50px 0;
+    background: linear-gradient(135deg, #3B1E54, #EEEEEE); /* Dark Gray Gradient */
+    text-align: center;
+    border-radius: 10px;
+}
+
+.instructors h2 {
+    font-size: 2rem;
+    font-weight: bold;
+    color: black; /* Neon Green */
+}
+
+/* Instructor Cards */
+.instructor-card {
+    background-color: #b4a7d6;  /* Dark Gray */
+    color: black;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease-in-out;
+}
+
+.instructor-card:hover {
+    transform: translateY(-5px);
+}
+
+/* Instructor Images */
+.instructor-img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    border: 3px solid #EEEEEE;
+    margin-bottom: 10px;
+}
+
+/* Instructor Name */
+.instructor-card h5 {
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: black; /* Electric Blue */
+}
+
+/* Qualification & Experience */
+.qualification {
+    font-size: 1rem;
+    color: black;
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+/* Course Taught */
+.course-taught {
+    font-size: 1rem;
+    font-style: italic;
+    color: #3B1E54;
+    font-weight: 500;
+}
+
+/* Instructor Message */
+.instructor-message {
+    font-size: 1rem;
+    color: #EEEEEE;
+    max-width: 300px;
+    margin: auto;
+    font-style: italic;
+}
+
+
+
+
+
+
+/* Footer Fix */
+.footer {
+    background-color: #0d0d0d;
+    color: #00ff99;
+    text-align: center;
+    padding: 15px 0;
+    width: 100%;
+    margin-top: auto;
+    position: relative;
+} 
+
+/* Top Companies Section */
+.top-companies {
+    background-color: #1c1e21; /* Dark background */
+    padding: 20px 0;
+    color: white;
+    text-align: center;
+}
+
+.top-companies .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.top-companies-text {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.highlight {
+    color: #b4a7d6; /* Light purple similar to Udemy Business */
+}
+
+.company-logos {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+.company-logos img {
+    height: 40px;
+    max-width: 100px;
+    filter: brightness(0.8);
+    transition: transform 0.3s ease-in-out;
+}
+
+.company-logos img:hover {
+    transform: scale(1.1);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .top-companies-text {
+        font-size: 16px;
+        text-align: center;
+        padding: 0 10px;
+    }
+
+    .company-logos {
+        gap: 15px;
+    }
+
+    .company-logos img {
+        height: 30px;
+    }
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+

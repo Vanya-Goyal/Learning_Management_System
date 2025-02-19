@@ -1,0 +1,178 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9;
+    color: #222;
+}
+
+.welcome-container {
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    background-color: white;
+    border-bottom: 1px solid #ddd;
+}
+
+.profile-icon {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: #D4BEE4;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    font-weight: bold;
+    margin-right: 15px;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.profile-icon:hover {
+    background-color: #666;
+}
+
+.welcome-text h1 {
+    margin: 0;
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.welcome-text p {
+    margin: 5px 0;
+    font-size: 14px;
+    color: #666;
+}
+
+.edit-link {
+    color: #D4BEE4;
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.course-category {
+    font-size: 20px;
+    font-weight: bold;
+    margin: 20px 0 10px;
+    color: #333;
+}
+
+.course-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 15px;
+    padding-bottom: 20px;
+}
+
+.course-card {
+    background-color: white;
+    border: 1px solid #ddd;
+    padding: 10px;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+}
+
+.course-card:hover {
+    transform: scale(1.03);
+}
+
+.course-card img {
+    width: 250px;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+/* Buttons for Course Tags */
+.tag {
+    display: inline-block;
+    padding: 8px 12px;
+    font-size: 14px;
+    font-weight: bold;
+    border-radius: 4px;
+    color: white;
+    border: none;
+    cursor: pointer;
+    margin-top: 8px;
+}
+
+/* General button styles */
+.tag {
+    padding: 8px 12px;
+    border: none;
+    border-radius: 5px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background 0.3s, color 0.3s;
+    position: relative;
+}
+/* General button styles */
+.tag {
+    padding: 8px 12px;
+    border: none;
+    border-radius: 5px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+    position: relative;
+}
+
+/* When hovered, change text */
+/* .tag:hover::before {
+    content: attr(data-hover); 
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: inherit; 
+    border-radius: inherit;
+    font-weight: bold;
+} */
+
+/* Hide original text on hover
+.tag:hover {
+    color: transparent;
+}
+
+/* Hide the default text on hover and replace it 
+.tag::after {
+    content: attr(data-hover);  
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+
+.tag:hover::after {
+    opacity: 1;
+}
+
+.tag:hover {
+    color: transparent;
+} */
+
+.premium { background-color: #3B1E54; }
+.bestseller { background-color: #3B1E54; }
+.highest-rated { background-color: #3B1E54; }
+
+/* Responsive */
+@media (max-width: 768px) {
+    .course-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 480px) {
+    .course-container {
+        grid-template-columns: repeat(1, 1fr);
+    }
+}

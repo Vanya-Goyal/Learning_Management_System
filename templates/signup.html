@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SkillUp|Sign Up</title>
+    <link rel="stylesheet" href="{{url_for('static', filename='CSS/signup.css' )}}">
+</head>
+
+<body>
+    {% extends 'base.html' %}
+
+    {% block content %}
+    <div class="container">
+        <div class="signup-container">
+            <!-- Left side - Illustration -->
+            <div class="illustration-container">
+                <img src="{{url_for('static', filename='images/signup.webp')}}"
+                    alt="Sign up illustration" class="illustration">
+            </div>
+
+            <!-- Right side - Form -->
+            <div class="form-container">
+                <h1>Sign up with email</h1>
+
+                <form method="POST" action="{{ url_for('signup') }}" class="signup-form">
+                    <!-- Marketing checkbox -->
+                    <div class="checkbox-group">
+                        <div class="checkbox-wrapper">
+                            <input id="marketing" type="checkbox" checked>
+                        </div>
+                        <label for="marketing">
+                            Send me special offers, personalized recommendations, and learning tips.
+                        </label>
+                    </div>
+
+                    <!-- Full name input -->
+                    <div class="input-group">
+                        <input name="fullname" type="text" id="fullName" placeholder="Full Name" required>
+                    </div>
+
+                    <!-- Email input -->
+                    <div class="input-group">
+                        <input name="email" type="email" id="email" placeholder="Email" required>
+                    </div>
+
+                    <div class="input-group">
+                        <input name="mobile" type="tel" id="mobile" placeholder="Mobile No" required>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="role"></label>
+                        <select name="role" id="role">
+                            <option  value="user">User</option>
+                            <option  value="admin">Instructor</option>
+                        </select>
+                    </div>
+
+                    <!-- Password input -->
+                    <div class="input-group password-group">
+                        <input name="password" type="password" id="password" placeholder="Password" required minlength="8">
+                        <div class="password-requirements">
+                            Must be at least 8 characters
+                        </div>
+                    </div>
+
+                    <!-- Confirm Password input -->
+                    <div class="input-group password-group">
+                        <input name="confirm_password" type="password" id="confirm_password" placeholder="Confirm password" required>
+                    </div>
+
+                    <!-- Submit button -->
+                    <button type="submit" class="submit-button">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <rect width="20" height="16" x="2" y="4" rx="2" />
+                            <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
+                        </svg>
+                        Continue with email
+                    </button>
+
+                    <!-- Terms and Privacy -->
+                    <p class="terms-text">
+                        By signing up, you agree to our
+                        <a href="{{url_for('termscondition')}}" class="purple-link">Terms of Use</a>
+                        and
+                        <a href="{{url_for('termscondition')}}" class="purple-link">Privacy Policy</a>.
+                    </p>
+
+                    <!-- Login link -->
+                    <div class="login-container">
+                        <p>
+                            Already have an account?
+                            <a href="{{url_for('login')}}" class="purple-link">Log in</a>
+                        </p>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    {% endblock %}
+
+</body>
+
+</html>

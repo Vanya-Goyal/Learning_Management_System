@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SkillUp|Edit Course</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body class="bg-light">
+    {% extends "base.html" %}
+
+    {% block content %}
+    <div class="container my-5">
+        <h2>Edit Course</h2>
+
+        <form action="{{ url_for('editcourse' , id=course.id) }}"  method="POST">
+            <!-- Course Title -->
+            <div class="mb-3">
+                <label for="title" class="form-label">Course Title</label>
+                <input type="text" class="form-control" id="title" name="title" value="{{ course.title }}" required>
+            </div>
+
+            <!-- Course Description -->
+            <div class="mb-3">
+                <label for="description" class="form-label">Course Description</label>
+                <textarea class="form-control" id="description" name="description" required>{{ course.description }}</textarea>
+            </div>
+
+            <!-- Course Image URL -->
+            <div class="mb-3">
+                <label for="image_url" class="form-label">Course Image URL</label>
+                <input type="text" class="form-control" id="image_url" name="image_url" value="{{ course.image_url }}">
+            </div>
+
+            <!-- Submit Button -->
+            <button type="submit" class="btn btn-dark">Save Changes</button>
+        </form>
+
+        <a href="{{ url_for('admindashboard') }}" class="btn btn-secondary mt-3">Back to Dashboard</a>
+    </div>
+{%endblock %}
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+
+</html>

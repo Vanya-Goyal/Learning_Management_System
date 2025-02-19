@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Knowlify</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/base.css') }}">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="{{ url_for('static', filename='js/script.js') }}" defer></script>
+</head>
+
+<body>
+
+    {% with messages = get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+    {% for category, message in messages %}
+    <div class="alert alert-{{ category }} alert-dismissible fade show" role="alert">
+        {{ message }}
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+    {% endfor %}
+    {% endif %}
+    {% endwith %}
+
+    <div class="page-wrapper">
+        <!-- Navbar -->
+        <nav class="navbar navbar-expand-lg navbar-dark  w-100">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="/">
+                    <img src="{{ url_for('static', filename='images/logo4.png') }}" alt="SkillUp" height="40">
+                </a>
+
+                <!-- Toggle Button for Mobile -->
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <form class="d-flex mx-auto" role="search">
+                        <input class="form-control me-2" type="search" placeholder="Search for courses"
+                            aria-label="Search">
+                        <button class="btn btn-outline-light" type="submit">Search</button>
+                    </form>
+
+                    <ul class="navbar-nav ms-auto align-items-center">
+                        {% if current_user.is_authenticated %}
+                        <li class="nav-item">
+                            <a class="nav-link btn btn-dark text-white" href="#">
+                                <img src="#" alt="Plans and Pricing" height="30">
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <!-- <a class="nav-link" href="{{url_for('cart')}}">
+                                <img src="{{ url_for('static', filename='images/cart4.png') }}" alt="Cart" height="30">
+                            </a> -->
+                            <a class="nav-link cart-link" href="{{ url_for('cart') }}">
+                                Cart ({{ session.get('cart', [])|length }})
+                                <img src="{{ url_for('static', filename='images/cart.png') }}" alt="" height="30"></a>
+                        </li>
+
+                        <!-- User Profile Dropdown -->
+
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle user-dropdown" href="#" id="userDropdown" role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">
+                                <span class="user-initial">{{ current_user.name[0]|upper }}</span>
+                            </a>
+                            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="userDropdown">
+                                <li><a class="dropdown-item" href="{{ url_for('profile') }}">👤 My Profile</a></li>
+
+                                {% if current_user.role == "admin" %}
+
+                                <li><a class="dropdown-item" href="{{url_for('createcourse')}}">📚 Create Courses</a></li>
+
+                                <li><a class="dropdown-item" href="">📊 Monitor Performance</a></li>
+
+                                <li><a class="dropdown-item" href="#">🎥 Host Meeting</a></li>
+
+                                {% else %}
+                                <li><a class="dropdown-item" href="#">💖 Wishlist</a></li>
+                                <li><a class="dropdown-item" href="{{ url_for('courses') }}">📚 My Courses</a></li>
+                                <li><a class="dropdown-item" href="#">💳 Payment Methods</a></li>
+                                
+                                {% endif %}
+                                <li><a class="dropdown-item" href="#">⚙️ Settings</a></li>
+                                <li>
+                                    <hr class="dropdown-divider">
+                                </li>
+                                <li><a class="dropdown-item text-danger" href="{{ url_for('logout') }}">🚪 Logout</a>
+                                </li>
+                            </ul>
+                        </li>
+
+
+
+                        {% else %}
+                        <li class="nav-item">
+                            <a class="nav-link btn btn-dark text-white" href="#">
+                                <img src="#" alt="Plans and Pricing" height="30">
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link btn btn-dark text-white" href="{{url_for('login')}}">Login</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link btn btn-dark text-white" href="{{url_for('signup')}}">Sign Up</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="languageDropdown" role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">
+                                🌍
+                            </a>
+                            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="languageDropdown">
+                                <li><a class="dropdown-item" href="/language/en">English</a></li>
+                                <li><a class="dropdown-item" href="/language/es">Español</a></li>
+                                <li><a class="dropdown-item" href="/language/fr">Français</a></li>
+                            </ul>
+                        </li>
+
+                        {% endif %}
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+
+
+        <!-- Main Content -->
+        <div class="content-wrapper">
+            <div class="container mt-4">
+                {% block content %}{% endblock %}
+            </div>
+        </div>
+
+        <!-- Footer (Full Width) -->
+        <footer class="w-100">
+            <div class="footer-container">
+                <div class="footer-top">
+                    <p><strong>Top companies choose <span class="highlight">SkillUP</span> to build in-demand
+                            career skills.</strong></p>
+                    <div class="footer-logos">
+                        <img src="{{url_for('static', filename='images/nasdaq-light.svg')}}" alt="Nasdaq">
+                        <img src="{{url_for('static', filename='images/volkswagen-light.svg')}}" alt="Volkswagen">
+                        <img src="{{url_for('static', filename='images/box-light.svg')}}" alt="Box">
+                        <img src="{{url_for('static', filename='images/netapp-light.svg')}}" alt="NetApp">
+                        <img src="{{url_for('static', filename='images/eventbrite-light.svg')}}" alt="Eventbrite">
+                    </div>
+                </div>
+
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h3>Certifications by Issuer</h3>
+                        <a href="#">AWS Certifications</a>
+                        <a href="#">Six Sigma Certifications</a>
+                        <a href="#">Microsoft Certifications</a>
+                        <a href="#">Cisco Certifications</a>
+                        <a href="#">Tableau Certifications</a>
+                        <a href="#">See all Certifications</a>
+                    </div>
+                    <div class="footer-column">
+                        <h3>Web Development</h3>
+                        <a href="#">Web Development</a>
+                        <a href="#">JavaScript</a>
+                        <a href="#">React JS</a>
+                        <a href="#">Angular</a>
+                        <a href="#">Java</a>
+                    </div>
+                    <div class="footer-column">
+                        <h3>IT Certifications</h3>
+                        <a href="#">Amazon AWS</a>
+                        <a href="#">AWS Certified Cloud Practitioner</a>
+                        <a href="#">Microsoft Azure Fundamentals</a>
+                        <a href="#">AWS Solutions Architect</a>
+                        <a href="#">Kubernetes</a>
+                    </div>
+                    <div class="footer-column">
+                        <h3>Leadership</h3>
+                        <a href="#">Leadership</a>
+                        <a href="#">Management Skills</a>
+                        <a href="#">Project Management</a>
+                        <a href="#">Personal Productivity</a>
+                        <a href="#">Emotional Intelligence</a>
+                    </div>
+                </div>
+
+                <div class="footer-bottom">
+                    <p>© 2025 SkillUp, Inc.</p>
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Sitemap</a>
+                    <a href="{{url_for('termscondition')}}">Terms</a>
+                    <a href="#">Cookie Settings</a>
+                </div>
+            </div>
+        </footer>
+    </div>
+</body>
+
+</html>

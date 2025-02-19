@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SkillUp|Dasboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/dashboard.css') }}">
+</head>
+
+<body>
+    {% extends 'base.html' %}
+
+    {% block content %}
+    <!-- Welcome Section -->
+    <header class="welcome-container">
+        <a href="{{ url_for('profile') }}" class="profile-icon">
+            {{ user.name[0]|upper }}
+        </a>
+        <div class="welcome-text">
+            <h1>Welcome back, {{ user.name }}</h1>
+            <p>Software Development <span class="edit-link">Edit occupation and interests</span></p>
+        </div>
+    </header>
+    
+    <!-- Course Recommendations -->
+    <section class="recommendation">
+        <h2>What to learn next</h2>
+        <p>Because you viewed <span class="highlight">"ChatGPT Complete Guide: Learn Generative AI, ChatGPT & More"</span></p>
+    
+        <!-- AI Courses -->
+        <h3 class="course-category">Artificial Intelligence & Machine Learning</h3>
+        <div class="course-container">
+            <div class="course-card">
+                <img src="{{ url_for('static', filename='images/lifetime.webp') }}" alt="Generative AI">
+                <h3>Generative AI for Beginners</h3>
+                <p>⭐ 4.6 (27,589)</p>
+                <p>₹799</p>
+                <a href="{{url_for('checkout')}}"><button class="tag premium" data-hover="Buy Premium">Buy Course</button></a>
+            </div>
+            <div class="course-card">
+                <img src="{{ url_for('static', filename='images/learning.webp') }}" alt="AI Course">
+                <h3>Artificial Intelligence A-Z 2025</h3>
+                <p>⭐ 4.4 (40,091)</p>
+                <p>₹3,999</p>
+                <button class="tag bestseller"data-hover="Add to Cart">Buy Course</button>
+            </div>
+        </div>
+    
+        <!-- Cloud Computing & DevOps -->
+        <h3 class="course-category">Cloud Computing & DevOps</h3>
+        <div class="course-container">
+            <div class="course-card">
+                <img src="{{ url_for('static', filename='images/certification.webp') }}" alt="AWS Certification">
+                <h3>AWS Certified Cloud Practitioner</h3>
+                <p>⭐ 4.6 (248,937)</p>
+                <p>₹3,499</p>
+                <button class="tag bestseller" data-hover="Add to Cart">Buy Course</button>
+            </div>
+            <div class="course-card">
+                <img src="{{ url_for('static', filename='images/learning.webp') }}" alt="DevOps Mastery">
+                <h3>Ultimate DevOps Project with Resume Prep</h3>
+                <p>⭐ 4.8 (590)</p>
+                <p>₹1,499</p>
+                <button class="tag highest-rated" data-hover="Add to Cart">Buy Course</button>
+            </div>
+        </div>
+    
+        <!-- Data Science & Cybersecurity -->
+        <h3 class="course-category">Data Science & Cybersecurity</h3>
+        <div class="course-container">
+            <div class="course-card">
+                <img src="{{ url_for('static', filename='images/certification.webp') }}" alt="Machine Learning">
+                <h3>Machine Learning and AI Fundamentals</h3>
+                <p>⭐ 4.6 (39,222)</p>
+                <p>₹2,499</p>
+                <button class="tag premium" data-hover="Buy Premium">Buy Course</button>
+            </div>
+            <div class="course-card">
+                <img src="{{ url_for('static', filename='images/learning.webp') }}" alt="Data Science Bootcamp">
+                <h3>Data Science Bootcamp 2025</h3>
+                <p>⭐ 4.8 (56,789)</p>
+                <p>₹3,299</p>
+                <button class="tag bestseller" data-hover="Buy Premium">Buy Course</button>
+            </div>
+        </div>
+    
+    </section>
+    {% endblock %}
+    
+</body>
+
+</html>

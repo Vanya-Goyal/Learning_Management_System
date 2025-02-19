@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Cart | Knowlify</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='CSS/cart.css') }}">
+</head>
+<body>
+
+    {% extends "base.html" %}
+    {% block content %}
+
+    <section class="cart-container">
+        <h2>Your Cart 🛒</h2>
+        
+        {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+                {% for category, message in messages %}
+                    <div class="alert alert-{{ category }}">{{ message }}</div>
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+
+        {% if cart_items %}
+            <table class="cart-table">
+                <thead>
+                    <tr>
+                        <th>Course Name</th>
+                        <th>Price</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for item in cart_items %}
+                        <tr>
+                            <td>{{ item.name }}</td>
+                            <td>${{ item.price }}</td>
+                            <td><a href="{{ url_for('remove_from_cart', course_id=item.id) }}" class="remove-btn">Remove</a></td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+
+            <div class="cart-summary">
+                <h3>Total: ${{ total_price }}</h3>
+                <a href="{{ url_for('clear_cart') }}" class="clear-btn">Clear Cart</a>
+                <button class="checkout-btn">Proceed to Checkout</button>
+            </div>
+
+        {% else %}
+            <p>Your cart is empty! Browse courses and add items to the cart.</p>
+        {% endif %}
+    </section>
+
+    {% endblock %}
+</body>
+</html>

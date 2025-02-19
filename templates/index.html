@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SkillUp|LMS</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/index.css') }}">
+    <script src="{{ url_for('static', filename='js/index_script.js') }}" ></script>
+
+
+</head>
+<body>
+    {% extends 'base.html' %}
+
+
+<div class="main-content">   {% block content %} 
+    <section class="hero-section text-center text-white d-flex flex-column justify-content-center align-items-center">
+        <div class="hero-content text-center">
+            <h1 class="hero-title display-4 fw-bold fade-in">Learn Anytime, Anywhere</h1>
+            <p class=" hero-subtitle lead slide-in">Build Your Future with SkillUp - Access Thousands of Courses from Top Instructors</p>
+            <div class="hero-button mt-3">
+                <a href="{{url_for('courses')}}" class="hero-btn btn btn-outline-light btn-lg me-3 scale-hover ">Explore Courses</a>
+                <a href="{{url_for('signup')}}" class="hero-btn btn btn-outline-light btn-lg scale-hover">Join for Free</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="course-categories container text-center my-5">
+        <h2 class="fw-bold">Explore Popular Categories</h2>
+        <p class="text-muted">Choose from a variety of top-rated courses</p>
+        <div class="row mt-4">
+            <div class="col-md-4">
+                <a href="{{url_for('coursedetail')}}" class="category-card">
+                    <img src="{{ url_for('static', filename='images/wd.png') }}" alt="Web Development">
+                    <h5>Web Development</h5>
+                </a>
+            </div>
+            <div class="col-md-4">
+                <a href="/courses?category=data-science" class="category-card">
+                    <img src="{{ url_for('static', filename='images/data-science.png') }}" alt="Data Science">
+                    <h5>Data Science</h5>
+                </a>
+            </div>
+            <div class="col-md-4">
+                <a href="/courses?category=ai-ml" class="category-card">
+                    <img src="{{ url_for('static', filename='images/ML.png') }}" alt="AI & Machine Learning">
+                    <h5>AI & Machine Learning</h5>
+                </a>
+            </div>
+        </div>
+    </section>
+    
+          <!-- Featured Courses Section (Carousel) -->
+<section class="featured-courses container my-5">
+    <h2 class="fw-bold text-center ">Top Featured Courses</h2>
+    <p class="text-muted text-center ">Learn from industry experts and enhance your skills</p>
+
+    <div id="courseCarousel" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="course-card">
+                            <img src="{{ url_for('static', filename='images/cweb.webp') }}" alt="Course 1">
+                            <h5>Full Stack Web Development</h5>
+                            <p>By John Doe</p>
+                            <span>⭐ 4.7 | 15,000 Students</span>
+                            <p class="price">$49.99</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="course-card">
+                            <img src="{{ url_for('static', filename='images/cdm.jpg') }}" alt="Course 2">
+                            <h5>Data Science & Machine Learning</h5>
+                            <p>By Jane Smith</p>
+                            <span>⭐ 4.8 | 20,000 Students</span>
+                            <p class="price">$59.99</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="course-card">
+                            <img src="{{ url_for('static', filename='images/cpy.webp') }}" alt="Course 3">
+                            <h5>Python for Beginners</h5>
+                            <p>By Alice Johnson</p>
+                            <span>⭐ 4.6 | 10,000 Students</span>
+                            <p class="price">Free</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="course-card">
+                            <img src="{{ url_for('static', filename='images/ccyber.webp') }}" alt="Course 4">
+                            <h5>Cybersecurity Fundamentals</h5>
+                            <p>By Mark Lee</p>
+                            <span>⭐ 4.5 | 8,000 Students</span>
+                            <p class="price">$39.99</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="course-card">
+                            <img src="{{ url_for('static', filename='images/cdm.jpg') }}" alt="Course 5">
+                            <h5>Digital Marketing Masterclass</h5>
+                            <p>By Sarah Kim</p>
+                            <span>⭐ 4.9 | 18,000 Students</span>
+                            <p class="price">$29.99</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="course-card">
+                            <img src="{{ url_for('static', filename='images/cai.jpg') }}" alt="Course 6">
+                            <h5>Artificial Intelligence Explained</h5>
+                            <p>By David Brown</p>
+                            <span>⭐ 4.7 | 12,000 Students</span>
+                            <p class="price">$69.99</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Carousel Controls -->
+        <button class="carousel-control-prev" type="button" data-bs-target="#courseCarousel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#courseCarousel" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        </button>
+    </div>
+
+    <div class="text-center mt-4">
+        <a href="/courses" class="btn btn-dark btn-lg">View All Courses</a>
+    </div>
+</section>
+
+<!-- Why Choose Knowlify Section -->
+<section class="why-choose container text-center my-5 scroll-animation">
+    <h2 class="fw-bold">Why Choose Knowlify?</h2>
+    <div class="row mt-4">
+        <div class="col-md-3">
+            <img src="{{ url_for('static', filename='images/instructor.webp') }}" alt="Expert Instructors" class="feature-icon">
+            <h5>Expert Instructors</h5>
+            <p>Learn from industry leaders & professionals.</p>
+        </div>
+        <div class="col-md-3">
+            <img src="{{ url_for('static', filename='images/lifetime.webp') }}" alt="Lifetime Access" class="feature-icon">
+            <h5>Lifetime Access</h5>
+            <p>Access courses anytime, anywhere.</p>
+        </div>
+        <div class="col-md-3">
+            <img src="{{ url_for('static', filename='images/learning.webp') }}" alt="Hands-on Learning" class="feature-icon">
+            <h5>Hands-on Learning</h5>
+            <p>Quizzes, projects, and real-world scenarios.</p>
+        </div>
+        <div class="col-md-3">
+            <img src="{{ url_for('static', filename='images/certification.webp') }}" alt="Certification" class="feature-icon">
+            <h5>Certification</h5>
+            <p>Get certified and boost your career.</p>
+        </div>
+    </div>
+</section>
+
+<!-- Student Testimonials Section -->
+<section class="testimonials container text-center my-5 scroll-animation">
+    <h2 class="fw-bold">What Our Students Say</h2>
+    <div class="row mt-4">
+        <div class="col-md-4">
+            <img src="{{ url_for('static', filename='images/client1.jpg') }}" class="testimonial-img rounded-circle" alt="Student 1">
+            <h5>John Doe</h5>
+            <p>"Knowlify helped me land my dream job in Web Development!"</p>
+            <span>⭐ 4.8 | Full Stack Web Development</span>
+        </div>
+        <div class="col-md-4">
+            <img src="{{ url_for('static', filename='images/client2.jpg') }}" class="testimonial-img rounded-circle" alt="Student 2">
+            <h5>Jane Smith</h5>
+            <p>"The AI course was amazing! I built my own chatbot."</p>
+            <span>⭐ 4.9 | AI & Machine Learning</span>
+        </div>
+        <div class="col-md-4">
+            <img src="{{ url_for('static', filename='images/client3.jpg') }}" class="testimonial-img rounded-circle" alt="Student 3">
+            <h5>Ali Khan</h5>
+            <p>"Clear explanations and practical projects. Highly recommend!"</p>
+            <span>⭐ 4.7 | Data Science & Analytics</span>
+        </div>
+    </div>
+</section>
+
+<!-- Meet Our Instructors Section -->
+<section class="instructors container text-center my-5 scroll-animation">
+    <h2 class="fw-bold">Meet Our Instructors</h2>
+    <div class="row mt-4">
+        <!-- Instructor 1 -->
+        <div class="col-md-4">
+            <div class="instructor-card">
+                <img src="{{ url_for('static', filename='images/instructor1.jpg') }}" alt="Instructor 1" class="instructor-img">
+                <h5>Dr. Emily Carter</h5>
+                <p class="qualification">PhD in Computer Science | 10+ Years Experience</p>
+                <p class="course-taught">Teaches: Full Stack Web Development</p>
+                <p class="instructor-message">"I believe in making learning interactive and project-based. Join me to master web development with real-world projects!"</p>
+            </div>
+        </div>
+        <!-- Instructor 2 -->
+        <div class="col-md-4">
+            <div class="instructor-card">
+                <img src="{{ url_for('static', filename='images/instructor2.avif') }}" alt="Instructor 2" class="instructor-img">
+                <h5>Prof. Mark Johnson</h5>
+                <p class="qualification">MSc in Data Science | 8+ Years Experience</p>
+                <p class="course-taught">Teaches: Data Science & Machine Learning</p>
+                <p class="instructor-message">"Data is the future! Let’s explore machine learning with hands-on projects and deep insights into AI-driven analytics."</p>
+            </div>
+        </div>
+        <!-- Instructor 3 -->
+        <div class="col-md-4">
+            <div class="instructor-card">
+                <img src="{{ url_for('static', filename='images/instructor3.avif') }}" alt="Instructor 3" class="instructor-img">
+                <h5>Sarah Lee</h5>
+                <p class="qualification">MBA in Marketing | 7+ Years Experience</p>
+                <p class="course-taught">Teaches: Digital Marketing & SEO</p>
+                <p class="instructor-message">"Marketing is about storytelling. Join me to learn how to build brands and scale businesses with digital strategies."</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+
+
+
+    <!-- Extra Space for Footer Alignment -->
+    <div class="spacer"></div>
+
+{% endblock %}
+
+ 
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>

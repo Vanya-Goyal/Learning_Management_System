@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SkillUp|Course Platform</title>
+    <link rel="stylesheet" href="{{url_for('static', filename='CSS/courses.css' )}}">
+</head>
+
+<body>
+    {% extends 'base.html' %}
+
+    {% block content %}
+    <header>
+        <div class="container">
+            <h1>All the skills you need in one place</h1>
+            <p>From critical skills to technical topics, Udemy supports your professional development.</p>
+        </div>
+    </header>
+
+    <nav class="domain-nav">
+        <div class="container">
+            <button class="domain-btn active" data-domain="data-science">Data Science</button>
+            <button class="domain-btn" data-domain="it-cert">IT Certifications</button>
+            <button class="domain-btn" data-domain="leadership">Leadership</button>
+            <button class="domain-btn" data-domain="web-dev">Web Development</button>
+            <button class="domain-btn" data-domain="communication">Communication</button>
+            <button class="domain-btn" data-domain="business">Business Analytics & Intelligence</button>
+        </div>
+    </nav>
+
+    <div class="categories-carousel">
+        <div class="container">
+            <!-- <button class="carousel-btn prev" onclick="scrollCategories('left')">&lt;</button> -->
+            <div class="categories-wrapper">
+                <div class="categories" id="categories">
+                    <!-- Data Science Categories -->
+                    <div class="category-group active" data-domain="data-science">
+                        <div class="category-pill">
+                            <h3>ChatGPT</h3>
+                            <p>4M+ learners</p>
+                        </div>
+                        <div class="category-pill">
+                            <h3>Data Science</h3>
+                            <p>7M+ learners</p>
+                        </div>
+                        <div class="category-pill">
+                            <h3>Python</h3>
+                            <p>47.7M+ learners</p>
+                        </div>
+                        <div class="category-pill">
+                            <h3>Machine Learning</h3>
+                            <p>8M+ learners</p>
+                        </div>
+                        <div class="category-pill">
+                            <h3>Deep Learning</h3>
+                            <p>2M+ learners</p>
+                        </div>
+                        <div class="category-pill">
+                            <h3>Artificial Intelligence (AI)</h3>
+                            <p>3M+ learners</p>
+                        </div>
+                        <div class="category-pill">
+                            <h3>Statistics</h3>
+                            <p>1M+ learners</p>
+                        </div>
+                        <!-- <div class="category-pill">
+                            <h3>Natural Language</h3>
+                            <p>800K+ learners</p>
+                        </div> -->
+                    </div>
+                </div>
+            </div>
+            <!-- <button class="carousel-btn next" onclick="scrollCategories('right')">&gt;</button> -->
+        </div>
+    </div>
+
+    <main class="container">
+        <div class="course-grid">
+            <!-- Data Science Courses -->
+            <div class="course-card">
+                <div class="course-image">
+                    <img src="{{url_for('static', filename='images/fullstack.png')}}" alt="ChatGPT Course">
+                    <div class="course-details">
+                        <h4>Course Details:</h4>
+                        <ul>
+                            <li>How to recognize the role of ChatGPT in digital marketing</li>
+                            <li>How to identify the functions of ChatGPT that can be used for improving digital
+                                marketing strategy</li>
+                            <li>How to optimize daily marketing routine with the help of ChatGPT</li>
+                        </ul>
+                    </div>
+                    <span class="badge premium">Premium</span>
+                    <span class="badge bestseller">Bestseller</span>
+                </div>
+                <div class="course-info">
+                    <h3>Full Stack Web Development Course using HTML, CSS, JS, Node.js</h3>
+                    <p class="instructor">Julian Melanson, Benza Maman</p>
+                    <div class="rating">
+                        <span class="stars">★★★★☆</span>
+                        <span class="rating-number">4.5</span>
+                        <span class="reviews">(44,274)</span>
+                    </div>
+                    <div class="price-action">
+                        <span class="price">₹2,699</span>
+                        <div class="button-group">
+                            <a href="{{url_for('coursedetail')}}"><button class="action-btn view-btn">View
+                                    Course</button></a>
+                            <a href="{{url_for('cart')}}"><button class="action-btn cart-btn">Add to Cart</button></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="course-card">
+                <div class="course-image">
+                    <img src="https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&auto=format&fit=crop&q=60"
+                        alt="ChatGPT Course">
+                    <div class="course-details">
+                        <h4>Course Details:</h4>
+                        <ul>
+                            <li>How to recognize the role of ChatGPT in digital marketing</li>
+                            <li>How to identify the functions of ChatGPT that can be used for improving digital
+                                marketing strategy</li>
+                            <li>How to optimize daily marketing routine with the help of ChatGPT</li>
+                        </ul>
+                    </div>
+                    <span class="badge premium">Premium</span>
+                    <span class="badge bestseller">Bestseller</span>
+                </div>
+                <div class="course-info">
+                    <h3>ChatGPT Complete Guide: Learn Generative AI, ChatGPT & More</h3>
+                    <p class="instructor">Julian Melanson, Benza Maman</p>
+                    <div class="rating">
+                        <span class="stars">★★★★☆</span>
+                        <span class="rating-number">4.5</span>
+                        <span class="reviews">(44,274)</span>
+                    </div>
+                    <div class="price-action">
+                        <span class="price">₹2,699</span>
+                        <div class="button-group">
+                            <button class="action-btn view-btn">View Course</button>
+                            <button class="action-btn cart-btn">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="course-card">
+                <div class="course-image">
+                    <img src="https://media.istockphoto.com/id/1317803197/es/foto/registro-de-estilos-de-pixel-art-renderizado-3d.webp?a=1&b=1&s=612x612&w=0&k=20&c=N2V4iBy3K2Mt3vwEHi4lJzvkboJE9te4yEBXGsG9xZQ="
+                        alt="ChatGPT Course">
+                    <div class="course-details">
+                        <h4>Course Details:</h4>
+                        <ul>
+                            <li>How to recognize the role of ChatGPT in digital marketing</li>
+                            <li>How to identify the functions of ChatGPT that can be used for improving digital
+                                marketing strategy</li>
+                            <li>How to optimize daily marketing routine with the help of ChatGPT</li>
+                        </ul>
+                    </div>
+                    <span class="badge premium">Premium</span>
+                    <span class="badge bestseller">Bestseller</span>
+                </div>
+
+                <div class="course-info">
+                    <h3>R Programming A-Z™: R For Data Science With Real Exercises!</h3>
+                    <p class="instructor">Julian Melanson, Benza Maman</p>
+                    <div class="rating">
+                        <span class="stars">★★★★☆</span>
+                        <span class="rating-number">4.5</span>
+                        <span class="reviews">(44,274)</span>
+                    </div>
+                    <div class="price-action">
+                        <span class="price">₹2,699</span>
+                        <div class="button-group">
+                            <button class="action-btn view-btn">View Course</button>
+                            <button class="action-btn cart-btn">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="course-card">
+                <div class="course-image">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ5kEGB2zTNIA1Zoz7p8o0XRW_GfS4fp72eMg&s"
+                        alt="ChatGPT Course">
+                    <div class="course-details">
+                        <h4>Course Details:</h4>
+                        <ul>
+                            <li>How to recognize the role of ChatGPT in digital marketing</li>
+                            <li>How to identify the functions of ChatGPT that can be used for improving digital
+                                marketing strategy</li>
+                            <li>How to optimize daily marketing routine with the help of ChatGPT</li>
+                        </ul>
+                    </div>
+                    <span class="badge premium">Premium</span>
+                    <span class="badge bestseller">Bestseller</span>
+                </div>
+                <div class="course-info">
+                    <h3>Data Manipulation in Python: Master Python, Numpy & Pandas</h3>
+                    <p class="instructor">Julian Melanson, Benza Maman</p>
+                    <div class="rating">
+                        <span class="stars">★★★★☆</span>
+                        <span class="rating-number">4.5</span>
+                        <span class="reviews">(44,274)</span>
+                    </div>
+                    <div class="price-action">
+                        <span class="price">₹2,699</span>
+                        <div class="button-group">
+                            <button class="action-btn view-btn">View Course</button>
+                            <button class="action-btn cart-btn">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="course-card">
+                <div class="course-image">
+                    <img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBw8QDw8PDw8PDw8PEA8PDw0PDw8PDg8PFREWFhURFhYYHiggGBslGxUVITEhJSkrLi4vFx8zOD8tNygwLisBCgoKDg0OGhAQGi0lHyYtLS0rLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLf/AABEIALEBHAMBEQACEQEDEQH/xAAcAAACAgMBAQAAAAAAAAAAAAAAAQQFAgYHAwj/xABKEAACAQMCBAIGBQcICAcAAAABAgMABBEFEgYTITFBcRQiMlFhgQdSkbHBIzM1QmJyoSQ0c3SEkrPCFRZTVILR4fBDRGOTlLLS/8QAGwEBAQADAQEBAAAAAAAAAAAAAAECBAUGAwf/xAA3EQACAQIDBQUHAwUBAQEAAAAAAQIDEQQFEiExQVFxEzIzgZEGFCI0UmHBsdHwI0JyoeGCRBb/2gAMAwEAAhEDEQA/AOKV9T5hQBQDFUg6EChRihB0IFUDoAoQdUBQBVAxQBQg6oHQBihLgKAdCDqgKEHVA6EChQoQdUBihB4oAoB1QFAFCBQDqgrq1TbChBgVQOhAoAoBigHVIOgChB1QFUBQAKAeKEHVAUBkKECgChB1QMCqQKAdCBQDqgKEHigCgHVAUAUIOqAxQABQDoQrhWqbgUIFUDoQKAYqgAKEMqAKAkXNlNEFMsMsQf2DJG8YbyLDrRNBxaI9ZEPWW3dAhdGUSIJIyykB4yxUOvvGVYZ+BqFaPOqQYFCEkWE/L5vIm5WM87lScrHv34xil1uLZkeqQ9IomdgiKzs3RURSzMfcAOpoLXGkLkMQjkJ1chWIQZx6x/V69OtCWZhQh6x27sjyKjFItnMcKSse84XcfDJBAq3FtguW23ftbbnbvwdu7Gdue2cdcUFjGqQyjQsQqqWZiAqqCzMT2AA7mgAihAqkCgM0jZs7VZtoLNtBO1R3Y47D40LYxqkHQBQgUA8VQOhAoB0AYoCtFapuBQg6ECqUKpBigMqECgE/Y+Ro9wW867xhrNlHdXVpdzz3kdzc6aZbRhLHDYRRqpkdHLe2Vb9QDxzXySe8+pDsNCtNPkmgnthc3K6frdxLzHdRyY2eODaFOFLLE7bh1AkBHhVbbCSI15BZXFtaRPbMJhw/c3cFws7gQCCW6lSLZ2cHawJbJ6jGMdbdraha5HvuHLJReWqwus9jY2l6dQM0hS5aTkF4zH7Kq3PITHX1O5pqdyNIw4x0Swjj1H0SB4H07UYrUu08k3PilEvQq3RSrRjBHh3yetZRbI0j31aVDp2k25vryCSayRFtYwfQpA17KpeU7x8f1T7I+Ti2VkuPhbT5bmW3S2mgFjqtnYSO80jG9ilkaNiQfYf1N42YG1vnU1MlkVPC7xJrYe1iMMdqt6UV5GlYtDazDmMx8SQDgdBWUu7tIu8bReWkcNtq6QgEarbXOpxbcH+TL6O8Sj/jnmH/AAVhfaZWIC8E2srWsTKlvOL9bO7jtrie46eiPOULSjaJcx7fUyvr/CrrZNKK7RtRsvQdalGn7bdBpYay9KnJdxcy4LyH1lPUZAx7Phmj3oqRdJwnai4NmTMbY63FDyuc4AifTmmAwDgsMgbu+BRTZNKK3TuHdPultLlIjbQtBqss0ElzM0chszGELSAF0B5oLbR2U4ArJykiaVvINlBaJrmlehSRvE9xp7usUkssUU5nAkjR5AGZegIz19bHhWSbcXcwaSkrEbhrS4LibUZZ2iKWiNLy5pZYYmd7lYwZHiBcKAxPQdTt6gZpKTSViqN3tL7Q+GNOnupEURSWU9ytra3XpN1zRM1qsrxwqq4fYz+3IACAPfWLm0i6ERdH0PT5DpEMkEhkvLOe8uZhO69I47oKiL2BLRqSf2AMdTVcpbWRxitg4tNtmtmu7eOS1W50TUZmt1uJXUSQXKx+0erKwwSp6ZFRyaMlFEvUuGNPeW8tYIXt3tLjSU9KM7ycxLx0RwUbooXfkHv0696utqxHBFVxJptktpcy29pJbvbaodPy88svMjWKVixDdA5KqSB0HTFZQbvtMKkUlsNPr6nxHihAoAoB4oB0IFLArK1TcCqQdChQg6oGKEHQBVIBFATXvOfcCa9aWYO6G4ZSomeMYUhSRgNtGBkVLbNhlfaWOo8U3Ml++oQu1vL0SEK2/lQLHy1i9bO4bBg5HUknxpp2WGogvrFySGMzlhBJag+r0t5N++Lt7J5j/wB41dKJqZ6za/evbpavcytbx7NkJI2gIcopOMlV8ASQPCmlDUzyudWuJeeJJncXMqzT5x+VlXdtduncbm+2lkNTPK4u5JFiSRy6wx8qJTjEce4ttHwyzH51bGOpljccUahIYC93MxtnWSEkrlJFGFk7eswAxlsnFNKGtkG3v5o5GljkZZHEis4xllkBDj5gkfOrYmpnqNWucAc+TAtjZgZzi1JyYR+zTSi62S7zijUJtnNu5n5bpKnUKVlQELICADuAJ9bufGiig5sw1HiC8uBKJ7h5BOsSzAhFEixuzoG2gdmZj86aUNbMv9ZL7fzPSpeZzluN/q556xcpZO3cJ6vlTQia2eNrrF1FyOVPJH6M0rwbSBymkxzCP3sDIPQ1dKJqYT6zcyXCXTzMbiMoyTAIpRkOUIAAAwfhV0q1g5Nu5Ok4u1JpUna8lMsauiP+T6I+N6EbcMDtHQg9hU0R5F7RmNvxXqMbSNHdyo0sizOV2DMoUKHHT1TgAdMZAwcimiPImtkSHVrlGhdZnVreJoYWGMxxNv3IOnY8x/7xrLSiamCarcLGIhM4jEMtuEGMCCV98kfbsWANHFDW0ZS6xcOZjJNI3pJh9I6gNKIiDHk47rgY8qaUNbLzijioXVtHao15IonFw819LHLLlYzGka7FA2gMxJPUk1jCFncynNNWNWr6HxCgHigHVIFAFAFUFbWobYUAUKMUIOqQdAFCDqgkae0AkBuVmaEBt4t3jSbscYLqQOuPCj3FVrmz8S8MQJevY6ety0kC8y5mvJ7ZYEhMcb8zcFQIBvwSxOcjFYKWzaZuPIhW3BOoO8iCKNTFLHA7SXFvGnMkQPEAzNht4K7cZzuFXWjHSyFLoFykMk8iLEkckkJWWWKOZ5I3VJFjjJ3SbWZQdoOM/A4y1ImkmT8G6gjQq0Kbpp47UIs8LtFcyDKQzAN+SYjrhsVNaDgy1s+EoorWWa9gv5p47pbY2+nyQMYgbcS5k9R8MCdpHTB6VNW0yUSHecLM/oPoqj8rpcN9dSzSpHBEWmlRnZ3IVF9VAB76uveSUORFPCV/zBEbciRrpbIJvj/nDRiRVznG0oQwbsR41dSMdDIc2jXCCEuqx8+aWCMySIoMkTqkm7J9VQzAbj07+6qpImnmbPxFwUy3cltZRIEtlijluZr232zTSdFBJIWORiCBF37HpmsYz4sylDkUMvDV4kEtzJFy4oZJIZDJJGjCZGVWiCk5Let2A7AnwrPUr2MNDLq04f07l6Ys8l5HPqUZKzo0DW0Lm4aFA0ZTcVyoyQ/jWLk9pmoqxVPwpeKs78tMQNcKRzYhJILdis7xRkhpFQjqQPuOMtaMHTYf6q3u2FuUv5Z7eMJzYjLG1wcQGVM7og/gWA+VNaHZs89X4durRFknjVUZ2iJSWKXlzKMmGTYx2PjrtPX+NVSTMXFoy1rSBC9lHDzJGurKyuNpwzGadfzaADtnAA71Yu6uzKULbjO54ZuopI45PR05vNxKbu25CtFjmo0m/arJkZUnPUYzmmtE0O9jL/VW9zcgxKBaBDcOZoRGiSRtJG4bdhlZV6EZzkDuaa0Ts2e9xwdewlGnhwnPghkWOa3eZOawCEqGOzd12lhiprTLoZmeDLyR5eRDmNbi7giWWe2Wd3gchogNw3yADOFGDgkdKdouIdNkax4VvZoVuI40MbpLKgaaFJXhjB3zLGzBigIxux3quaTMezZTVmYBihB1QFUBQDxQBihCsrUN0KEChTIVTEdAFUg6AKoEw6EfA1HuKt5va8ZQf6R1C4Aljgv7eOASci3nmgdFh2yGJyUdd0RyuexBGCKw0uxnqRFvuKEkiMbyzXDrqVjdLO1tBbBra3tmi28uNiFYZAAHTA7jtVUGNaJU/FtsRfuedOZ7ye8s7Oe2iEdrO90JUuBOJCy+oNrRqMEnvjrU0Ma0SI+LrCG4kuIFu29N1Sz1K7SWOIejpDM8xhiIc8xi8jesdo2gDvk0UGHJFGvErJZTW8EtzDNLqL3ZkjcxhoGhK7GZWyW3YOO3xrLTtMXPYWQ4mtJbZbKYXEcT6ZZWclxHHHI8dzbXUsysIy4DxkSYPUGpod7l1o9245i3XuyOYKbe3i00sIzJFNBavbLNL1wGKSuemeoUdavZsa0VHGevx3s8UkKPHFHGSY3Cg+kSzPNOwwT0LucfBRWUYtIwlK5bahxPY3cl6k/pcUE+oRajBJFHE82UiMbQuhcAZU9GDHBrFQa3GWtMhcW8Ux30QAjeOQ395dlTtKCOVY1RQc5LAIc9PGrGLTMZTuiRba3p3L0uSYXbzabGQLVIolhnlFw8yFpi+VTLDICE9DTS7sqmj1k40MtqAZ5La7Rb1W5djaXEdx6RJJJ0ldg8P511OM9Dkdc00bSa1YsY+LFu7ux5c0sbT3mlLPY+h2oj3RTxZIuVPMddyggFc9ax0NJmSkm9hTcW6jaql1Z25ndpNVnvJ3mjSNY2QSRiFNrNv6u53nb0C9O+M4J72Y1JcDOTXbIPpt2pujd6fDpsZt2hhFtIbZl3/leYWGRuwdnfFVRltQc4vaS24otTOC8800G27aDfpdghsbmQIIphGr7Z2UKQS23spHwx0O2wvaRuRuJeKYLmG9jQXBa5TSlV5UiQk2sTrIXCMQMlgRjp37VlGDTRi6iue0/Fts1zqMwSfbdzaRJECqblW0eNpA3rdCQhxjPhnFR03ZIvaozHF9t6VZz7J9lvqmpXzjam4xXEqMiqN2CwCnI6D4mqqbs0R1FctdBkSSCO+lgu4vRdIvLMXBjQWEiBZVjYSE55hMm3lgdT18OuMlw+5YvYczFfc12OqQKoHigDFCDxQg8VQVVaZuhQDqgdCDoB1SBQBVAUA6AdCBQDqkGKEHVsAFCDqgdCDqgKEHQBVA6EHQBVA6EHQAKAeP8Av41RcKpAxQDoQdAOqQKoCgKqtI3QqgyAoQdAAqkAmgsLePePtpdFsxgg0JYyqgdUgUA6EHQg6oGKpAoB0IOgCqB0IOqAoQKAdUDoQeKAdCBVAVQOgHVIOhAqgKgHiqB4oQqK0jeGKoZlQgUBvXA3CNvLAb+/5jW/MaK3tY25bXLqPXZn7rGMgdOpP8coQlOVkSc4043ZusF7DAB6Lp9jbD9VhbLJIce+R8lvOtmOGhxdzVlip8D1bii7+vHj3ej2+P8A61l7tT5GPvFTmQ7nVY5ul1YWFyp9otbJHL8pEwVPxrF4WPC5ksVNbzS+NOFYYYlvrAubN3EUsEh3S2cxGVUt+sjeDfI9a1nFwemRtRlGcdUTTqpBigHQxHVAChB1QOhDKOMsQqgszHCqoJYn3ADuajaSu9xUm9iOhcLfRs77Zb8mNO4tlP5Rv32Hsj4Dr5VwcbnUYXhQ2vnw8jp4fL29tT0No17gGyuIwIkW1lRdqSRKNuB2Dr+t59/jXLw2b16Urzepfc262CpzWzYzlev8PXVk+2dMKThJl6xP5HwPwPWvVYXG0sTG8H5cTjVsPOk/iRV4rcPgKoQYqgzVSewJ8hUckt7MoU5z7qb6D5bfVP2Gse0jzRn7tW+h+jHyz9U/YauuPND3at9D9GHLb3H7DV1w5oe7Vvofow5be4/YadpDmh7tW+h+jHyz7j9hp2kOaJ7tW+h+jHy2+qfsNXtIc0T3at9D9GPln3H7DTtIc0Pdq30P0YbD7j9hq9pDmh7tW+h+jHyz7j9hp2kOaJ7tW+h+jERisk09qPlOEoO0lZhVMR0IVFaZvjFCDoAFUh2PStq6Vo4x6vImdlHTJa5ct9uK2MNukfDFd6Ju3GWt2U1kscLI7kxmNFGDEB3z9XpkY+NfOhSqRqXZlXqQlCyOeu1b5onizUISYgHsdYjbqh0+SbH/AKkUqMjfIk1q4rup/c28J3mjlIr4H3HQDoQBVA6pAoC+4a4Uur9sxLshBw1w4IjHvA+sfgPnitHF4+lhl8Tu+X83GxQws6r2buZ1zhrhK1sRmNeZMRhriQAyH3hfqj4D55rymMzGriXt2LkdqhhYUls38y+NaBsnnFOjEhWBK9CAeoquLW1mTjJb0F1bRyo0cqLIjDDI4DKR5GsoTlTlqi7MwlFSVmjm3FH0bsN0tgdw6k2rn1h/Rse/kftr0mBztO0K/r+5yMRl391P0OeSxMjFHVkdThkYFWU+4g9q9FGSkrxd0cqUXF2ZjWRiT9K7v5L+NcvM90fM9d7J9+r0X5LDNck9qGaAM0AZoAzUAZoAzVAZoAzQFfe+2fIV6DL/AAfM/N/aX56XRHhW+efCgKkVpG8OgLPh/Qbm/m5FrHvYDc7sQkUSDu7ueir/ANio2VI3Nfo1tVGJtYQP+sILKWaMH4PuG7zxX1VKo+B8nVpLibtZ2mmJaWls99MxtImiEiWzqHBkZ87TnHtY7+FfSnGrTvZf7PnUnSqWu/8AQms9I/325/8Ajn/819NVb6V6nz0UfqZU61FZIE9EuJZiS28SRmPaOmMdBnxr6U3N95WPnUUF3Xcp2NfQ+RecIab6Yb6138v0jT54uZt37Nzx+ttyM+Wa08bJRp6nwNvBq87HkfoRXHTVOvhmzOP8SuOs1oczo+7M0LjHg660uRVn2vFLnk3MeTFJjuvXqrD6p+Wa36VWNRXiz4TpuJr1fU+Y6pD2tLWSV1iiRpJGOFRAWY/9PjWE6kacdU3ZGUYOTsjpnC30aqu2W/Idu4tVP5MfvsPa8h08685jc7b+Chs+/wCx1sPl6W2p6HRYo1VQqgKqjCqoAUD3ADtXn5Scnd7zpJJKyPOe4VO56+AHeokZxi5bisuLpn+A+qPx99ZpGxGmolNPIySllJUjGCPIVvU0nBXNyMVKFmXGn64DhZvVP1x7J8/dWvUw1tsTVq4VrbEuQQRkdQfEdq1dxqFHxNw3aXiZnXZIBhLhMCVfh+0Pga3sHj62GfwPZy4GvWwsKys1tOK6rY+jzywbt/LYrvA27vEHHh3r2+HrdtSjUta55yvSdKo4PgZ6X3fyX8a0cz3R8z1Psn36vRfkn1yD2oUAUFwoAoAoAoAoBigK+89s+Qr0WX+D5s/N/ab599EeNbx58KEKitI3x0B2HQ7MWWmWsC9JLyNL67cdGfmdYYj8FTBx7zmtjCwTvN+Rr4qbVoIxY1ummeTGoDxZqA8mNCHkxoDbvou/nk39Ul/xI65+Z/Lv+cGbuC8Q6GTXgWzvWNf470kXumXkGN0ixNcQdsieIFgB7twDL5Ma6uUYhxq9nwZ8MRC8bnzUteqOYzNFyQPeQP41JOybLBXkkd04RsrK3Tl26COQj12fDSykeO7xHwGMe6vEY2tXrSvN3X+vQ9UsEqC2LzNiZgBk9APGueEiBcX/AIJ/eP4Vmon2hS4sgEk9T1PvrI+wUKanfa9Et5NbyfkypQLIT6jZRT1P6veu3RwVSWHjUjt+3E16eZ0o1XRqbLbnwLAGtY6qdybpt/JGwVTlSQNjdR18R7q+NWnGSufGtRjJXLGWRmOWOfuFaSRrxio7jkPFn8+uf6T/ACivdZb8rDoeOzD5ifUjaX3fyX8a+Gabo+Z6P2T79XovyT65B7UKA7d9D9uh00kohJuJckqCT0XxrpYVLszw+fTl721fgjkXESgXt4AAALq4AA6AAStgVoVO+z1+Cd8PT/xX6ECNCxCqCzMQqqASST0AA8TWCVzYlJRV3uO3fR9wSllF6RdKpuXXJDYK26dyvuz7z8vPp0KCgry3nh81zSWJnop91f7/AJwNF+kniqK8kEFsiejwsTzgoDSyYIyD4L1Pn391a2IqqWxbjuZNl88PHtKj+J8OS/c0mtU7oxQFfee2fIV6LLvA8z839pvn30R41vHnh0BUVpG+G3PqjucAeZ6UKt53PijAu5UHsxcuFQOwWONVx/Ct7Dq1NHPrv+oynZq+x8jxdqAyWzmYZWGZgezLE7A/MCsXOK4l0yfBmLafcf7vP/7Mn/KmuPNeo0S5MSaVdMQq21wSegAgl/5UdSC4ouiT4M6PwZw+9lFI82BcXAUGMEHlRDrgkeJPfyFeczrHx0dnHedbA4Zx+KReE15Js6qQ7cjeoPUE7SPeD0P3198HU014P7kqK8GfKt9bcmaaH/YyyRZPc7HK/hXu47kcSe884faX95fvqT7rLT766nW/GvIs/Q+BcW1w7ou9i2Mjr51oVYpS2GnKEYydkZk4r5rbuIRJL3qAnXqAWPn4V940Xa8j6qnsuyZXwPkcl40/SFz5x/4SV7bK/lYfzieQzH5mX84HlpGuzW+Fzvi/2bHsP2T4fdWeJwVOtt3PmfXBZnVwztvjy/Y3nRdUhuCpjb1gV3Rno69fd4j4ivPYrC1KKakvM9Vh8dRxMLwe3lxPTX+LILbKJiaYdNin1EP7bfgOvlWGCymriPil8MefF9Dm4vMqdH4Y7Zfzec2vrt5pXmfG+RtzbRgZ+Ar11GlGlBQjuR5erVdSbnLez30vu/kv41z803R8z1fsn36vRfknVxz2oUB3P6HP0Z/aJvuWunhfDPC5984+iOP8SDN/egdc3dz0Hf8APNXPqd99T1+CaWGpt/Sv0OqfRtwMLVVvLtR6SwzFG3/l1I7n9sj7K3sPQ0/FLeeVzfNXXbpUu7x+/wDw1/6S+OeeWsrR/wAgOk8yn88R3RT9T3+/y7/PE17/AAxOhk2VaLV6y28Fy+/X9DnFaR6UKAYoCBdj1z5CvRZd4Hmfm3tL8++iPGt888OlgU9aJ0Bq+0hvqkN9hzVYW87hxWf5bcEdnZZB5OiuPvrdoO9NGjXX9RlKzV9j4m78C6BHyxezoJGZiLeNhlQFODIR4nI6eX2cbNcf2EdMd50MHhlP4pG6G5f632Yry7x1du+o63ZR5CNy/wBY/wAKx9+r/UOzjyMGun+saxljq7XfZkqUeRHZq0pSbd2fVIwLV82zOxlbdZEH7S/fX2wnxYiC+6/UlXZBny7rE4kurqRTlZLi4kUjsVaVmB+w1+gRVkcGfeIgqtXMb2Nq0bixlwlzl18JgPXH7w/W8x1865WJy1S+Kls+x38FnTj8NfaufE2u44ptbeBW3iVmBKRREFiM9yf1R5/xrjRy2vWqtWsuLf8ANpv4rMaEFqTvysU2ha/PeXMnMIWNYiUhX2F9dep8WOPE/wAK38VgaWGorTvvtZr5XjKmIry1brbF5mxx+0PMffXMluZ33uZs1vYE9X6D6vif+VcxyObKryKjifgi2vMun5C4x+eUZV8DAEi+PmMHz7V0sDmtXDfC9seXLoczE4OFZ6t0uZynXNCubKTZcR7c+xIvrRSD3q34HBr1uFxdLEx1U35cUcGtQnSdpIr43KkFSVI7EEgj51sOKkrM+Sk4u6FisjEdUE3TO7+S/jXJzTdHzPXeyXfq9F+SdXIPbBQHc/od/Rn9om+5a6eF8M8Ln3zj6I8OFOB9t7c392oLNdXD20J6hFMrETN8SOw8O/ftKdC0nKXkZY3NXKhDD0tySu+ezd+5P+lI3Y06RrVsKD/KcZ5nIx12nwGcZ+GazxGrR8J8MmVF4pKr5crnBK5R79BQBQDoCDd+38hXo8u8DzZ+a+03z8uiPKt48+PFUhS1onRChDsC3XpNhp94DnNulnOe5W5txsO74sm1h8K2MLLY4mvio7VIgs1bZqHXtAH8hsv6uh+2vGZ2/wCv6/qd/BeEiYTXFbNtIwJr5tmSR5s1YtmaRgzV83IySMCawbMkiq4n1b0OwvLvOGjhZIfjcS+pGPj1bPkK62SUHUr63uX6mti56YWPmxRgAe7pXtTiN3dzKqQBQg6timy8C/n5f6L/ADrXLzbw49fwdzIfGl0/Ju1cA9WWWn6w8eFb109xPrL5H8K+FShGW1bGa1XDRntWxly2pqVBj65HcjGK0nTcXZmoqLT+I5/9J7lo7cscnmP3/dFehyDxJ9PycrOUlTjbmc+r1B50dUBQhO03u/kv41ys03R8z1/sl36vRfkm1xz2wUB3L6Hf0Z/aJvuWunhfDPC5984+iKv6S+OuXvsbN8SnK3E6nrEPGND9b3nw8+2GIr2+GJtZPlPaWrVl8PBc/u/t+pefRzxINQs+VMQ08IEcwbB5iEYWTHjkZB+INfWhV1x27zRzXBPCV7x7r2r7fY5Xx7w0dPu2RQeRLmSBvcuesfmpOPLFaNelol9j1WVY5Yqjt7y2P9/M1mvgdQKAdAQrr2z8q9Hl3gLqz819pvn5dEeWK3zzoUBTVonRCgNh4Q4qewMkbxi5s58ekWjMVyR7MsbfqSD3+I6HwIbU7reXY1aW42xeKdBbqRq6fs7LR8eR3da+vvFTkj4vC0+bOu8OXsM1hZyW/M5LQ4j5wVZdqsV9YKSM+r4V5bOZN1U3/Np1MLG0LE0muK2bdhxbDneSPdgZr60FQd+1k10JLUu6jIrB9d/7v/Svu4YH65en/DG9XkiJql1bW9vPcs0zJbxPM6oq7yi98ZwM/Ovrh8FhMRLRCcr+X7EnVqwV2kaK/wBLOkY6RaiT7uVbjP2yVv8A/wCfpfU/9fsfD398kc94843k1No41j9HtIWLRQbtzvIRjmyN4tgkADoMnvXYwuEp4eGmCNOtWdR7TU62jXHVIOgGKoNk4F/Py/0X+da5ebeHHr+Du5D40un5N3Az09/SuA3Y9W9g5IypwRg1IyT2oKSe4s7P82vz++tKr32atTvM0b6QNVgl5UMTh2idy5Xqo6YxnxNekyTC1aeqpNWTWw81m+JpztCLu1vNNFegOGOhB4qkJum938l/GuTmu6Pmew9ku/V6L8k2uOe2CgO5/Q7+jP7RN9y108L4Z4XPvnH0Rx7iX+fXv9auf8Zq59TvvqewwXy9P/Ffoe3CuuvYXUdwmSoO2VB/4kR9pfxHxAq0qjhK5hj8JHFUXTe/h1O3cTaTDq1hiNlJdRNay+58dPkex866VSCqw/Q8Rg8RPA4i74bGj5+uIHjdo5FKOjFXQ91YHBBrlNWdmfoNOcZxUovYzyqGYxQEO59o+Qr0mW+AurPzT2m+fl0R5YrfPPBigKWtA6IVQFAOhD6Q+jWQHRdOwc4ilU/BhO+RXmM68SLOnhdzNiLVw2zbSPMmvm2ZJE6wslkQsxOckDB7V2cvy+liKTnN/wDDWr1pQlZGscaELpeqZPQWcyZ95JCqPmaZLDTipJcP3GKl/TR8317E4oxQg6pB0AVQOhDZeBvz8v8ARf51rl5t4a6/g7uQeNLp+Td4/aHmPvrz8tzPVvcy3kjDDBGRXPjJx2o1E2nsOdcY6zOJpLRH2Qx7QdvRpNyhvWPu64xXq8rwdKVNV5K8n/o81muNqyqypp2RqoruHFHQg6EHVBM03u/kv41yc13R8z2Hsl36vRfkm1xz2wUB3P6HP0Z/aJvuWunhfDPC5982+iOPcS/z69/rdz/jNXPqd5nsMD8tT/xX6FbWBtHUPog4n2sdPmb1XJe2Y+Dd2i+fUj5++t7C1f7GeWz/AAH/ANEP/X7np9MHDGMajCv1UulA8eyS/cD8qYql/ejHIMft93n/AOf2OV1onqxigIdyPWPyr0mW+AurPzT2n+fl0R510Dzw6EKOuedIKoHQBQHRfou48jsQ1lebvRJHMkcygs1tKfayo6lD0zjqD18emjjcHHEQs9/Bn3o1XBnaLWRZ0EtvJHcRHqJIXWRT9navK18txFP+26+x0oV4SAxt9Vv7prRdGre2l+jPvqjzHLIYUaSWRbeIDLyTSCJAPiTW/hcHjXsheKfkfCpVpb3tOP8A0m8eQ3UfoFixe33q9xckFROyHKxoD12A9c+JA8O/p8uy+OFjzb3s5uJr9oc3rpmmOgAVSDoBiqAoQ2Xgb8/L/Rf51rl5t4a6ndyDxpdPybvH7Q8x99efluZ6t7mXVc40zk/Gf6QuPOP/AAkr2+VfKQ/nE8fmXzM/5wKUV0TRMhQxHVA6oJmnd38l/GuTmu6Pmev9ku/V6L8kyuMe3CgJVrqM8QKxTzRKTkrHK6An34BrJSa3M+U8PSqO84pv7pEdmJJJJJPUk9ST76xPokkrIxoUzjkZSGUlWUgqykhgR2II7UTsSUVJWZIuNUuZFKSXE8iHBKPNI6kjt0JrJzk97PlDDUYPVGCT+yRErE+wxQES49o16TLfAXVn5n7T/PvojzroHngpYFHWgdIBQDFAOqQdAe9pdSwtvhllhf68UjxN9qkGpZMKTRcjjXVtu3/SV5t93PfP296mmJdbKi8vJpm3TyyzN9aaR5WHzYmslFIxcmeNZGIxQg6pBigHVAUIOgJWn30kD74mwexyMhh7iPdXzrUYVo6Zo++GxNTDz1we03fROI4piqviKTI9Vj6jfun8DXn8Xl9Skm47Uerwmb0q60y+GX83Htr/ABrHFmO2xLJ2Mh/NKfh9Y/wr54LJp1LSrbFy4/8ADRxebRh8NLa+fA0G6uXldpJGLu5yzHHXpivT0qcacVCCskecqVJVJOUntZ5CvofMyqkCqB0BM0/u3kv41ys1Tajb7nrvZOSU6t+S/JMzXH0y5Hte0hzXqGaml8h2kOaCml8h2kOa9QzV0y5DtI80FTS+Q7SHNeoVdL5DtIc16hTS+Q7SHNBTRLkO0hzXqMU0y5DtIc16kS49o/KvR5arUF1Z+a+0zTx8muSMK6B58MUFyhrnnSHQGVCBVAxQjHQg6oGKpB0IFAOqQdAOqB0IOqQKAyqgKpB0IMVQOhBiqQYoB1SXHipZC48VSBVFx4pZEuzICrYjYYpYXHirYXY8UsiXHilkLjxWSJcKEHVBQ1zjpjFAFUgxQGVCBQgxVIOqB0IOqB0IOqAoQYoB1SDoQdVAKoMhQg6pAqgyqkHQAKEHQg6oHQhkKpGOhAqgdUDoQBVA6pB0A6EKAVzjqDFAFUhkKAdCBVIMUIMVQMUIOqQdAMVQFAOqQdCDoQdUDqkGKoHQgCqDKqB0IMUMQoB0IOqDIVSBVIMUKZCqQKEGKoCqRjoAoD//2Q=="
+                        alt="ChatGPT Course">
+                    <div class="course-details">
+                        <h4>Course Details:</h4>
+                        <ul>
+                            <li>How to recognize the role of ChatGPT in digital marketing</li>
+                            <li>How to identify the functions of ChatGPT that can be used for improving digital
+                                marketing strategy</li>
+                            <li>How to optimize daily marketing routine with the help of ChatGPT</li>
+                        </ul>
+                    </div>
+                    <span class="badge premium">Premium</span>
+                    <span class="badge bestseller">Bestseller</span>
+                </div>
+                <div class="course-info">
+                    <h3>Complete Guide to TensorFlow for Deep Learning with Python</h3>
+                    <p class="instructor">Julian Melanson, Benza Maman</p>
+                    <div class="rating">
+                        <span class="stars">★★★★☆</span>
+                        <span class="rating-number">4.5</span>
+                        <span class="reviews">(44,274)</span>
+                    </div>
+                    <div class="price-action">
+                        <span class="price">₹2,699</span>
+                        <div class="button-group">
+                            <button class="action-btn view-btn">View Course</button>
+                            <button class="action-btn cart-btn">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="course-card">
+                <div class="course-image">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcThzu4SCVpMWpGEtGewHd9rPIm-qpM6PbSZxg&s"
+                        alt="ChatGPT Course">
+                    <div class="course-details">
+                        <h4>Course Details:</h4>
+                        <ul>
+                            <li>How to recognize the role of ChatGPT in digital marketing</li>
+                            <li>How to identify the functions of ChatGPT that can be used for improving digital
+                                marketing strategy</li>
+                            <li>How to optimize daily marketing routine with the help of ChatGPT</li>
+                        </ul>
+                    </div>
+                    <span class="badge premium">Premium</span>
+                    <span class="badge bestseller">Bestseller</span>
+                </div>
+                <div class="course-info">
+                    <h3>Modern Artificial Intelligence Masterclass: Build 6 Projects</h3>
+                    <p class="instructor">Julian Melanson, Benza Maman</p>
+                    <div class="rating">
+                        <span class="stars">★★★★☆</span>
+                        <span class="rating-number">4.5</span>
+                        <span class="reviews">(44,274)</span>
+                    </div>
+                    <div class="price-action">
+                        <span class="price">₹2,699</span>
+                        <div class="button-group">
+                            <button class="action-btn view-btn">View Course</button>
+                            <button class="action-btn cart-btn">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="course-card">
+                <div class="course-image">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSBWcEzLLM8SdoqMJ-ljBeI0lqxqbxvMRyWQg&s"
+                        alt="ChatGPT Course">
+                    <div class="course-details">
+                        <h4>Course Details:</h4>
+                        <ul>
+                            <li>How to recognize the role of ChatGPT in digital marketing</li>
+                            <li>How to identify the functions of ChatGPT that can be used for improving digital
+                                marketing strategy</li>
+                            <li>How to optimize daily marketing routine with the help of ChatGPT</li>
+                        </ul>
+                    </div>
+                    <span class="badge premium">Premium</span>
+                    <span class="badge bestseller">Bestseller</span>
+                </div>
+                <div class="course-info">
+                    <h3>Data Science: Natural Language Processing (NLP) in Python</h3>
+                    <p class="instructor">Julian Melanson, Benza Maman</p>
+                    <div class="rating">
+                        <span class="stars">★★★★☆</span>
+                        <span class="rating-number">4.5</span>
+                        <span class="reviews">(44,274)</span>
+                    </div>
+                    <div class="price-action">
+                        <span class="price">₹2,699</span>
+                        <div class="button-group">
+                            <button class="action-btn view-btn">View Course</button>
+                            <button class="action-btn cart-btn">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="course-card">
+                <div class="course-image">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTv1gb_OtJ4uutIlYuJtrA5YWWEfNLEINtDjQ&s"
+                        alt="ChatGPT Course">
+                    <div class="course-details">
+                        <h4>Course Details:</h4>
+                        <ul>
+                            <li>How to recognize the role of ChatGPT in digital marketing</li>
+                            <li>How to identify the functions of ChatGPT that can be used for improving digital
+                                marketing strategy</li>
+                            <li>How to optimize daily marketing routine with the help of ChatGPT</li>
+                        </ul>
+                    </div>
+                    <span class="badge premium">Premium</span>
+                    <span class="badge bestseller">Bestseller</span>
+                </div>
+                <div class="course-info">
+                    <h3>Statistics for Data Science and Business Analysis</h3>
+                    <p class="instructor">Julian Melanson, Benza Maman</p>
+                    <div class="rating">
+                        <span class="stars">★★★★☆</span>
+                        <span class="rating-number">4.5</span>
+                        <span class="reviews">(44,274)</span>
+                    </div>
+                    <div class="price-action">
+                        <span class="price">₹2,699</span>
+                        <div class="button-group">
+                            <button class="action-btn view-btn">View Course</button>
+                            <button class="action-btn cart-btn">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- More course cards would be dynamically added here -->
+        </div>
+
+        <div class="show-all">
+            <button class="show-all-btn">Show all Data Science courses</button>
+        </div>
+    </main>
+
+    <script>
+        // // Domain navigation
+        // const domainBtns = document.querySelectorAll('.domain-btn');
+        // domainBtns.forEach(btn => {
+        //     btn.addEventListener('click', () => {
+        //         domainBtns.forEach(b => b.classList.remove('active'));
+        //         btn.classList.add('active');
+        //     });
+        // });
+
+        // // Course card hover effects
+        // document.querySelectorAll('.course-card').forEach(card => {
+        //     card.addEventListener('mouseenter', () => {
+        //         const btn = card.querySelector('.action-btn');
+        //         btn.textContent = 'Add to cart';
+        //         btn.classList.add('cart-btn');
+        //     });
+
+        //     card.addEventListener('mouseleave', () => {
+        //         const btn = card.querySelector('.action-btn');
+        //         btn.textContent = 'View Course';
+        //         btn.classList.remove('cart-btn');
+        //     });
+        // });
+
+        // // Category carousel
+        // let categoryIndex = 0;
+        // const categoriesWrapper = document.querySelector('.categories-wrapper');
+        // const categories = document.querySelector('.categories');
+
+        // function scrollCategories(direction) {
+        //     const step = 280;
+        //     const maxScroll = categories.scrollWidth - categoriesWrapper.clientWidth;
+
+        //     if (direction === 'left') {
+        //         categoryIndex = Math.max(0, categoryIndex - step);
+        //     } else {
+        //         categoryIndex = Math.min(maxScroll, categoryIndex + step);
+        //     }
+
+        //     categories.style.transform = `translateX(-${categoryIndex}px)`;
+        // }
+
+        // document.addEventListener("DOMContentLoaded", function () {
+        //     document.querySelectorAll(".add-to-cart-btn").forEach(button => {
+        //         button.addEventListener("click", function () {
+        //             let courseId = this.dataset.courseId;  // Get course ID
+        //             let courseTitle = this.dataset.courseTitle;
+        //             let coursePrice = this.dataset.coursePrice;
+        //             let courseImage = this.dataset.courseImage;
+
+        //             fetch("/add_to_cart", {
+        //                 method: "POST",
+        //                 headers: { "Content-Type": "application/json" },
+        //                 body: JSON.stringify({
+        //                     id: courseId,
+        //                     title: courseTitle,
+        //                     price: coursePrice,
+        //                     image: courseImage
+        //                 })
+        //             })
+        //                 .then(response => response.json())
+        //                 .then(data => {
+        //                     alert(data.message);
+        //                 });
+        //         });
+        //     });
+        // });
+
+
+    </script>
+    {%endblock%}
+</body>
+
+</html>

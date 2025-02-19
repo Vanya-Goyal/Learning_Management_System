@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SillUp|Checkout</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/checkout.css') }}">
+</head>
+<body>
+    {% extends 'base.html' %}
+
+    {% block content %}
+    <div class="checkout-container">
+        
+        <!-- Left Section - Billing & Payment -->
+        <section class="billing-section">
+            <h2>Checkout</h2>
+
+            <div class="billing-address">
+                <h3>Billing address</h3>
+                <label for="country">Country</label>
+                <select id="country">
+                    <option>India</option>
+                    <option>USA</option>
+                    <option>UK</option>
+                </select>
+
+                <label for="state">State / Union Territory</label>
+                <select id="state">
+                    <option>Please select...</option>
+                </select>
+            </div>
+
+            <!-- Payment Methods -->
+            <h3>Payment method</h3>
+            <div class="payment-methods">
+                
+                <div class="payment-option">
+                    <input type="radio" id="cards" name="payment" checked>
+                    <label for="cards">Cards</label>
+                </div>
+
+                <div class="card-details">
+                    <label>Card number</label>
+                    <input type="text" placeholder="1234 5678 9012 3456">
+                    
+                    <div class="card-expiry">
+                        <div>
+                            <label>Expiry date</label>
+                            <input type="text" placeholder="MM/YY">
+                        </div>
+                        <div>
+                            <label>CVC / CVV</label>
+                            <input type="text" placeholder="CVC">
+                        </div>
+                    </div>
+
+                    <label>Name on card</label>
+                    <input type="text" placeholder="Name on card">
+
+                    <label class="checkbox-container">
+                        <input type="checkbox">
+                        Securely save this card for my later purchase
+                    </label>
+                </div>
+
+                <div class="payment-option">
+                    <input type="radio" id="upi" name="payment">
+                    <label for="upi">UPI</label>
+                </div>
+
+                <div class="payment-option">
+                    <input type="radio" id="net-banking" name="payment">
+                    <label for="net-banking">Net Banking</label>
+                </div>
+
+                <div class="payment-option">
+                    <input type="radio" id="wallets" name="payment">
+                    <label for="wallets">Mobile Wallets</label>
+                </div>
+
+            </div>
+
+            <!-- Order Details -->
+            <h3>Order details (1 course)</h3>
+            <div class="order-details">
+                <img src="{{ url_for('static', filename='images/client1.jpg') }}" alt="Generative AI for Beginners">
+                <p>Generative AI for Beginners</p>
+                <p class="price">₹799</p>
+            </div>
+        </section>
+
+        <!-- Right Section - Order Summary -->
+        <aside class="order-summary">
+            <h3>Order summary</h3>
+            <p>Original Price: <span>₹799</span></p>
+            <p class="total">Total (1 course): <span>₹799</span></p>
+            <button class="pay-btn">Pay ₹799</button>
+
+            <div class="money-back">
+                <p>30-Day Money-Back Guarantee</p>
+                <small>Not satisfied? Get a full refund within 30 days.</small>
+            </div>
+
+            <div class="success-box">
+                <p>🔥 Tap into Success Now</p>
+                <small>Join <strong>30+</strong> people in your country who’ve recently enrolled in this course within last 24 hours.</small>
+            </div>
+        </aside>
+
+    </div>
+{%endblock%}
+</body>
+</html>

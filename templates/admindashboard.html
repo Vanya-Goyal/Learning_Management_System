@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SkillUp|Instructor Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='CSS/admindashboard.css') }}">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+
+</head>
+
+<body class="bg-light">
+    {% extends 'base.html' %}
+    {% block content %}
+    <div class="container my-5">
+        <div class="d-flex justify-content-between align-items-center mb-4">
+            <h2>Welcome {{ current_user.name }} to your Dashboard</h2>
+            <a href="{{ url_for('createcourse') }}" class="btn btn-dark">Create New Course</a>
+        </div>
+
+        <h4>Your Courses</h4>
+        <div class="row">
+            {% for course in courses %}
+                <div class="col-md-4 mb-4">
+                    <div class="card shadow-sm">
+                        {% if course.image_url %}
+                            <img src="{{ course.image_url }}" class="card-img-top" alt="{{ course.title }}">
+                        {% else %}
+                            <img src="https://via.placeholder.com/200" class="card-img-top" alt="Placeholder">
+                        {% endif %}
+                        <div class="card-body">
+                            <h5 class="card-title">{{ course.title }}</h5>
+                            <p class="card-text">
+                                {{ course.description[:100] }}{% if course.description|length > 100 %}
+                                ... <a href="#" class="btn btn-link btn-sm">Read More</a>{% endif %}
+                            </p>
+                            <div class="d-flex justify-content-between">
+                                <a href="{{ url_for('editcourse', id=course.id) }}" class="btn btn-dark btn-sm">Edit</a>
+                                <a href="{{ url_for('deletecourse', id=course.id) }}" class="btn btn-secondary btn-sm">Delete</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            {% else %}
+                <p>No courses created yet. Click the button above to create your first course.</p>
+            {% endfor %}
+        </div>
+    </div>
+{%endblock%}
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+
+</html>

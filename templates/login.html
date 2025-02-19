@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SkillUp|Login Page</title>
+    <link rel="stylesheet" href="{{url_for('static', filename='CSS/login.css' )}}">
+</head>
+
+<body>
+
+    {% extends "base.html" %}
+
+    {% block content %}
+
+    <div class="container">
+        <!-- Left side with illustration -->
+        <div class="illustration-container">
+            <img src="{{url_for('static', filename='images/login.webp')}}"
+                alt="Learning illustration" class="illustration" />
+        </div>
+
+        <!-- Right side with login form -->
+        <div class="form-container">
+            <div class="form-wrapper">
+                <div class="header">
+                    <h2>Log in to continue your learning journey</h2>
+                </div>
+
+                <form method="post" action="{{ url_for('login') }}" class="login-form">
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input name="email" id="email" name="email" type="email" required />
+                    </div>
+
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <div class="password-input-wrapper">
+                            <input id="password" name="password" type="password" required />
+                            <a href="{{url_for('forgetPassword')}}" class="forgot-password">Forgot?</a>
+                        </div>
+                    </div>
+                     
+                    <button type="submit" class="submit-button">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                            class="mail-icon">
+                            <rect width="20" height="16" x="2" y="4" rx="2"></rect>
+                            <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path>
+                        </svg>
+                        Continue with email
+                    </button>
+
+                    <div class="divider">
+                        <span>Other log in options</span>
+                    </div>
+
+                    <div class="social-buttons">
+                        <button class="social-button">
+                            <img src="https://www.google.com/images/branding/googleg/1x/googleg_standard_color_128dp.png"
+                                alt="Google logo" />
+                        </button>
+                        <button class="social-button">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/Facebook_Logo_%282019%29.png/1024px-Facebook_Logo_%282019%29.png"
+                                alt="Facebook logo" />
+                        </button>
+                        <button class="social-button">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/Apple_logo_grey.svg/758px-Apple_logo_grey.svg.png"
+                                alt="Apple logo" />
+                        </button>
+                    </div>
+
+                    <div class="footer">
+                        <p class="signup-text">
+                            Don't have an account?
+                            <a href="{{url_for('signup')}}" class="link">Sign up</a>
+                        </p>
+                        <a href="#" class="link organization-link">
+                            Log in with your organization
+                        </a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    {% endblock %}
+
+
+</body>
+
+</html>

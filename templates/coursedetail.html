@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Full Stack Web Development Course | SkillUp</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/coursedetail.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+</head>
+
+<body>
+
+    {% extends "base.html" %}
+    {% block content %}
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Full Stack Web Development</h1>
+            <p>Master Frontend & Backend Development with Hands-on Projects</p>
+            <ul class="course-details">
+                <li>📅 Duration: 6 Months</li>
+                <li>⭐ Beginner to Advanced</li>
+                <li>🏆 Certificate of Completion</li>
+            </ul>
+            <a href="#pricing" class="enroll-btn">Enroll Now</a>
+        </div>
+        <div class="hero-image">
+            <img src="{{url_for('static', filename='images/ml.png')}}" alt="Full Stack Web Development">
+        </div>
+    </section>
+
+    <!-- About the Course -->
+    <section class="about-course">
+        <div class="container">
+            <div class="about-content">
+                <h2 class="section-title">Master Full Stack Web Development</h2>
+                <div class="about-grid">
+                    <div class="about-text">
+                        <p class="lead">Transform from beginner to job-ready developer through our comprehensive program
+                            covering both frontend and backend technologies. Build professional projects while learning
+                            modern tools used by top tech companies.</p>
+                        <div class="key-features">
+                            <h3>What Makes This Course Unique</h3>
+                            <ul class="features-list">
+                                <li class="feature-item">
+                                    <i class="fas fa-check-circle"></i>
+                                    <div class="feature-content">
+                                        <h4>Full Stack Mastery</h4>
+                                        <p>HTML5, CSS3, JavaScript (ES6+), React, Node.js, Express, MongoDB & more</p>
+                                    </div>
+                                </li>
+                                <li class="feature-item">
+                                    <i class="fas fa-check-circle"></i>
+                                    <div class="feature-content">
+                                        <h4>Project-Driven Learning</h4>
+                                        <p>Build 8+ real-world applications including e-commerce platforms and SaaS
+                                            tools</p>
+                                    </div>
+                                </li>
+                                <li class="feature-item">
+                                    <i class="fas fa-check-circle"></i>
+                                    <div class="feature-content">
+                                        <h4>Career Preparation</h4>
+                                        <p>Resume workshops, mock interviews, and portfolio development included</p>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="about-media">
+                        <img src="https://images.unsplash.com/photo-1550439062-609e1531270e" alt="Coding workspace"
+                            class="about-image">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Course Highlights -->
+    <section class="course-highlights">
+        <div class="container highlight-grid">
+            <div class="highlight-card">
+                <i class="fas fa-laptop-code"></i>
+                <h3>Project-Based Learning</h3>
+                <p>Build 10+ real-world applications</p>
+            </div>
+            <div class="highlight-card">
+                <i class="fas fa-users"></i>
+                <h3>Live Mentorship</h3>
+                <p>Weekly 1:1 sessions with experts</p>
+            </div>
+            <div class="highlight-card">
+                <i class="fas fa-infinity"></i>
+                <h3>Lifetime Access</h3>
+                <p>Including future updates</p>
+            </div>
+        </div>
+    </section>
+
+
+
+    <section class="instructor">
+        <div class="container">
+            <h2 class="section-title">Meet Your Instructor</h2>
+            <div class="instructor-card">
+                <img src="{{url_for('static', filename='images/ml.png')}}" alt="John Doe" class="instructor-photo">
+                <div class="instructor-info">
+                    <h3>John Doe</h3>
+                    <p class="instructor-title">Senior Full Stack Developer</p>
+                    <div class="instructor-badges">
+                        <span>10+ Years Experience</span>
+                        <span>Ex-Google</span>
+                        <span>Microsoft MVP</span>
+                    </div>
+                    <p class="instructor-bio">Passionate educator with 5+ years teaching experience. Built scalable
+                        applications for Fortune 500 companies and fast-growing startups.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Student Testimonials -->
+    <section class="testimonials">
+        <div class="container">
+            <h2 class="section-title">Student Success Stories</h2>
+            <div class="testimonial-grid">
+                <div class="testimonial-card">
+                    <div class="testimonial-header">
+                        <img src="{{ url_for('static', filename='images/client2.jpg') }}" alt="Sarah"
+                            class="testimonial-avatar">
+                        <div class="rating">
+                            ★★★★★
+                        </div>
+                    </div>
+                    <blockquote class="testimonial-text">
+                        “This course helped me land my first web development job. The projects were amazing!”
+                    </blockquote>
+                    <div class="testimonial-author">Sarah M. · Junior Developer</div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="testimonial-header">
+                        <img src="{{ url_for('static', filename='images/client1.jpg') }}" alt="Alex"
+                            class="testimonial-avatar">
+                        <div class="rating">
+                            ★★★★★
+                        </div>
+                    </div>
+                    <blockquote class="testimonial-text">
+                        “The best full-stack course I’ve taken. Very well structured and beginner-friendly.”
+                    </blockquote>
+                    <div class="testimonial-author">Alex B. · Full Stack Developer</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="pricing" id="pricing">
+        <div class="container">
+            <h2 class="section-title">Choose Your Plan</h2>
+            <div class="pricing-grid">
+                <!-- Standard Plan -->
+                <div class="price-card">
+                    <button class="wishlist-btn"><i class="far fa-heart"></i></button>
+                    <div class="card-header">
+                        <h3>Standard</h3>
+                        <div class="price">$49.99</div>
+                    </div>
+                    <ul class="features-list">
+                        <li><i class="fas fa-check"></i> Self-Paced Learning</li>
+                        <li><i class="fas fa-check"></i> Lifetime Access</li>
+                        <li><i class="fas fa-check"></i> Community Support</li>
+                    </ul>
+                    <div class="pricing-actions">
+                        <form method="POST" action="{{ url_for('add_to_cart') }}" class="price-form">
+                            <input type="hidden" name="course_id" value="ds101">
+                            <input type="hidden" name="course_name" value="web development">
+                            <input type="hidden" name="price" value="49.99">
+                            <a href="{{url_for('cart')}}"><button type="submit" class="btnn  cartbtn">Add to
+                                    Cart</button></a>
+
+                        </form>
+                        <button class="btnn  primarybtn">Buy Now</button>
+                    </div>
+                </div>
+
+                <!-- Premium Plan -->
+                <div class="price-card popular">
+                    <!-- <span class="popular-badge">Most Popular</span> -->
+                    <button class="wishlist-btn"><i class="far fa-heart"></i></button>
+                    <div class="card-header">
+                        <h3>Premium</h3>
+                        <div class="price">$99.99</div>
+                    </div>
+                    <ul class="features-list">
+                        <li><i class="fas fa-check"></i> 1-on-1 Mentorship</li>
+                        <li><i class="fas fa-check"></i> Job Assistance</li>
+                        <li><i class="fas fa-check"></i> Priority Support</li>
+                    </ul>
+                    <div class="pricing-actions">
+                        <form method="POST" action="#" class="price-form">
+                            <input type="hidden" name="course_id" value="ds102">
+                            <button type="submit" class="btnn cartbtn">Add to Cart</button>
+                        </form>
+                        <a href="{{url_for('checkout')}}"><button class="btnn  primarybtn">Buy Now</button></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq">
+        <h2>Frequently Asked Questions</h2>
+        <div class="faq-item">
+            <h3>Do I need prior coding experience?</h3>
+            <p>No, this course is beginner-friendly!</p>
+        </div>
+        <div class="faq-item">
+            <h3>How long do I have access to the course?</h3>
+            <p>You get lifetime access!</p>
+        </div>
+    </section>
+
+    {% endblock %}
+
+</body>
+
+</html>
